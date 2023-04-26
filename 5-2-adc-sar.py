@@ -1,5 +1,4 @@
 import RPi.GPIO as GPIO
-import sys
 import time
 from time import sleep
 
@@ -19,7 +18,7 @@ def adc():
     for i in range(7, -1, -1):
         t += 2**i
         GPIO.output(dac, tobinery(t))
-        sleep(0.0000001)
+        sleep(0.00000)
         if GPIO.input(comp)==0:
             t-=2**i
     return t
